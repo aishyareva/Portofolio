@@ -1,0 +1,400 @@
+/* =========================================
+   CYBERSIGILISM PORTFOLIO
+   External CSS
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --bg: #07080b;
+    --panel: #0e1118;
+    --panel-2: #121722;
+    --cyan: #00ffcc;
+    --pink: #ff007f;
+    --white: #e9fdf8;
+    --muted: #8993a8;
+    --line: #263042;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--white);
+    background:
+        radial-gradient(circle at 15% 10%, rgba(0, 255, 204, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 20%, rgba(255, 0, 127, 0.07), transparent 25%),
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px),
+        var(--bg);
+    background-size: auto, auto, 32px 32px, 32px 32px, auto;
+    font-family: "IBM Plex Mono", "Courier New", monospace;
+    line-height: 1.7;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.018) 0,
+        rgba(255,255,255,0.018) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+    mix-blend-mode: screen;
+    opacity: 0.45;
+}
+
+.site-header {
+    text-align: center;
+    padding: 55px 20px 35px;
+}
+
+.sigil {
+    color: var(--cyan);
+    font-family: "Share Tech Mono", monospace;
+    font-size: clamp(0.72rem, 1.5vw, 1rem);
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
+    overflow-wrap: anywhere;
+}
+
+h1, h2, h3 {
+    font-family: "Share Tech Mono", "Courier New", monospace;
+    letter-spacing: 0.08em;
+}
+
+h1 {
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 4.2rem);
+    line-height: 1.05;
+    margin: 20px 0 12px;
+    text-shadow:
+        3px 0 var(--pink),
+        -3px 0 var(--cyan),
+        0 0 22px rgba(255,255,255,0.25);
+}
+
+.subtitle {
+    color: var(--pink);
+    font-size: 0.9rem;
+    text-shadow: 0 0 10px rgba(255, 0, 127, 0.55);
+}
+
+.neon-line,
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    box-shadow: 0 0 12px rgba(0,255,204,0.65);
+}
+
+.neon-line {
+    width: min(820px, 85%);
+    margin: 25px auto 0;
+}
+
+.portfolio-shell {
+    width: min(1100px, 92%);
+    margin: 20px auto 50px;
+    padding: clamp(18px, 4vw, 42px);
+    background: rgba(14, 17, 24, 0.92);
+    border: 1px solid #30394b;
+    box-shadow:
+        0 0 0 1px rgba(0,255,204,0.06),
+        0 0 45px rgba(0,255,204,0.06),
+        12px 12px 0 rgba(255,0,127,0.035);
+    position: relative;
+}
+
+.portfolio-shell::before,
+.portfolio-shell::after {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-color: var(--cyan);
+    border-style: solid;
+    pointer-events: none;
+}
+
+.portfolio-shell::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+}
+
+.portfolio-shell::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+}
+
+.identity-grid {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.5fr);
+    gap: 35px;
+    align-items: start;
+}
+
+.profile-panel {
+    text-align: center;
+    padding: 25px;
+    background: #080a0f;
+    border: 1px solid var(--cyan);
+    box-shadow: inset 0 0 25px rgba(0,255,204,0.05), 0 0 18px rgba(0,255,204,0.08);
+}
+
+.photo-frame {
+    display: inline-block;
+    padding: 7px;
+    background: #020304;
+    border: 2px solid var(--cyan);
+    box-shadow: 7px 7px 0 rgba(255,0,127,0.35);
+    clip-path: polygon(8% 0, 100% 0, 100% 92%, 92% 100%, 0 100%, 0 8%);
+}
+
+.photo-frame img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    filter: saturate(0.8) contrast(1.1);
+}
+
+.system-user {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin: 18px 0 0;
+}
+
+.info-panel {
+    padding: 5px 5px 5px 10px;
+}
+
+.info-panel h2,
+.section-title {
+    color: var(--cyan);
+    font-size: 1.3rem;
+    text-shadow: 0 0 9px rgba(0,255,204,0.55);
+}
+
+.info-panel h2.pink,
+.media-card.pink-card h3 {
+    color: var(--pink);
+    text-shadow: 0 0 9px rgba(255,0,127,0.55);
+}
+
+.info-panel p {
+    color: #c9d2df;
+}
+
+.info-panel b {
+    color: #fff;
+}
+
+.divider {
+    height: 1px;
+    margin: 24px 0;
+    background: var(--line);
+}
+
+ul {
+    padding-left: 25px;
+}
+
+li::marker {
+    color: var(--pink);
+}
+
+li {
+    margin: 8px 0;
+}
+
+a {
+    color: var(--cyan);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--cyan);
+    transition: 0.2s ease;
+}
+
+a:hover {
+    color: #fff;
+    background: var(--pink);
+    border-bottom-color: var(--pink);
+    box-shadow: 0 0 15px rgba(255,0,127,0.55);
+}
+
+.section-divider {
+    margin: 38px 0;
+    background: linear-gradient(90deg, transparent, var(--cyan), var(--pink), transparent);
+}
+
+.section-title {
+    text-align: center;
+    color: #fff;
+    margin: 0 0 25px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.schedule {
+    width: 100%;
+    border-collapse: collapse;
+    background: #080a0f;
+    border: 1px solid var(--cyan);
+}
+
+.schedule th,
+.schedule td {
+    border: 1px solid #273044;
+    padding: 13px;
+}
+
+.schedule th {
+    color: var(--cyan);
+    background: #151b28;
+    font-weight: 600;
+}
+
+.schedule tbody tr {
+    transition: background 0.2s ease;
+}
+
+.schedule tbody tr:hover {
+    background: rgba(0,255,204,0.055);
+}
+
+.schedule .day {
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    background: #0c1018;
+}
+
+.schedule .period {
+    width: 55px;
+    text-align: center;
+    color: var(--cyan);
+}
+
+.schedule span {
+    color: #aeb8cf;
+    font-size: 0.85rem;
+}
+
+.schedule strong {
+    color: var(--pink);
+    font-size: 0.82rem;
+}
+
+.schedule .empty {
+    text-align: center;
+    color: #58627a;
+}
+
+.schedule tfoot td {
+    text-align: center;
+    color: var(--pink);
+    background: #15121d;
+    font-weight: 600;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.media-card {
+    min-height: 250px;
+    padding: 25px;
+    text-align: center;
+    background: #080a0f;
+    border: 1px solid var(--line);
+    position: relative;
+}
+
+.media-card::before {
+    content: "[ SIGNAL // ACTIVE ]";
+    display: block;
+    margin-bottom: 15px;
+    color: var(--muted);
+    font-size: 0.7rem;
+}
+
+.cyan-card {
+    border-color: var(--cyan);
+    box-shadow: inset 0 0 30px rgba(0,255,204,0.04);
+}
+
+.pink-card {
+    border-color: var(--pink);
+    box-shadow: inset 0 0 30px rgba(255,0,127,0.04);
+}
+
+.media-card h3 {
+    color: var(--cyan);
+    font-size: 1rem;
+}
+
+audio {
+    width: min(100%, 420px);
+    margin-top: 35px;
+}
+
+iframe {
+    width: 100%;
+    max-width: 420px;
+    height: 240px;
+    border: 1px solid var(--pink);
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.75rem;
+    padding: 0 20px 45px;
+}
+
+@media (max-width: 760px) {
+    .site-header {
+        padding-top: 35px;
+    }
+
+    .identity-grid,
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-shell {
+        width: 94%;
+        padding: 20px 15px;
+    }
+
+    .profile-panel {
+        padding: 20px 10px;
+    }
+
+    .photo-frame img {
+        width: 170px;
+        height: 170px;
+    }
+
+    .schedule th,
+    .schedule td {
+        padding: 9px;
+        font-size: 0.78rem;
+    }
+}
